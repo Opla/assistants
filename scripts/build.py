@@ -23,7 +23,8 @@ collection = {
     "_version": "1",
     "created_at": datetime.now(tz=UTC).strftime("%Y-%m-%dT%H:%M:%S%.%fZ"),
     "updated_at": datetime.now(tz=UTC).strftime("%Y-%m-%dT%H:%M:%S.%fZ"),
-    "assistants": []
+    "assistants": [],
+    "tags": [],
 }
 
 def add_assistant(assistant):
