@@ -1,0 +1,38 @@
+{
+    "$id": "https://opla.github.io/assistants/schema/v1/assistants_collection.schema.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Models collection",
+    "type": "object",
+    "properties": {
+        "_version": {
+            "const": "1"
+        },
+        "created_at": {
+            "type": "string",
+            "format": "date-time"
+        },
+        "updated_at": {
+            "type": "string",
+            "format": "date-time"
+        },
+        "tags": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "assistants": {
+            "type": "array",
+            "items": {
+                "$ref": "https://opla.github.io/assistants/schema/v1/assistant.schema.json"
+            },
+            "uniqueItems": true
+        }
+    },
+    "required": [
+        "_version",
+        "created_at",
+        "updated_at",
+        "assistants"
+    ]
+}

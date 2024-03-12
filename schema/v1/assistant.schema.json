@@ -1,0 +1,323 @@
+{
+    "$id": "https://opla.github.io/assistants/schema/v1/assistant.schema.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Assistant",
+    "type": "object",
+    "allOf": [
+        {
+            "$ref": "#/definitions/assistant"
+        }
+    ],
+    "properties": {
+        "_version": {
+            "const": "1.0.0"
+        },
+        "_schema": {
+            "const": "opla.ai/llm/assistant"
+        }
+    },
+    "required": [
+        "_version",
+        "name",
+        "id"
+    ],
+    "definitions": {
+        "assistant": {
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "uuid",
+                    "description": "assistant's unique identifier"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name of the assistant"
+                },
+                "created_at": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "creation date of the assistant"
+                },
+                "updated_at": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "updated date of the assistant"
+                },
+                "avatar": {
+                    "$ref": "#/definitions/avatar"
+                },
+                "parent_id": {
+                    "type": "string",
+                    "description": "The base assistant of the assistant"
+                },
+                "title": {
+                    "type": "string",
+                    "description": "The title of the assistant"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "The description of the assistant"
+                },
+                "summary": {
+                    "type": "string",
+                    "description": "The summary of the assistant"
+                },
+                "version": {
+                    "type": "string",
+                    "description": "The version of the assistant"
+                },
+                "creator": {
+                    "type": "string",
+                    "description": "The creator of the assistant, it is a unique identifier"
+                },
+                "author": {
+                    "$ref": "#/definitions/person_or_org",
+                    "description": "The author of the assistant"
+                },
+                "license": {
+                    "$ref": "#/definitions/license"
+                },
+                "languages": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    ]
+                },
+                "tags": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    ]
+                },
+                "deprecated": {
+                    "type": "boolean",
+                    "description": "The assistant is deprecated"
+                },
+                "readonly": {
+                    "type": "boolean",
+                    "description": "The assistant is readonly"
+                },
+                "private": {
+                    "type": "boolean",
+                    "description": "The assistant is private"
+                },
+                "featured": {
+                    "type": "boolean",
+                    "description": "The assistant is featured"
+                },
+                "repository": {
+                    "$ref": "#/definitions/url"
+                },
+                "download": {
+                    "$ref": "#/definitions/url"
+                },
+                "documentation": {
+                    "$ref": "#/definitions/url"
+                },
+                "include": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/assistant"
+                    }
+                },
+                "system": {
+                    "type": "string",
+                    "description": "The system prompt is a textual intruction to initialize a conversation using the assistant"
+                },
+                "targets": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/preset"
+                    }
+                }
+            },
+            "required": [
+                "name"
+            ]
+        },
+        "preset": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "uuid",
+                    "description": "preset's unique identifier"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name of the preset"
+                },
+                "created_at": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "creation date of the preset"
+                },
+                "updated_at": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "updated date of the preset"
+                },
+                "parent_id": {
+                    "type": "string",
+                    "format": "uuid",
+                    "description": "preset's parent id"
+                },
+                "readonly": {
+                    "type": "boolean",
+                    "description": "The assistant is readonly"
+                },
+                "disabled": {
+                    "type": "boolean",
+                    "description": "The assistant is disabled"
+                },
+                "models": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Models compatible with the preset"
+                },
+                "provider": {
+                    "type": "string",
+                    "description": "Llm provider of the preset"
+                },
+                "system": {
+                    "type": "string",
+                    "description": "The system prompt is a textual intruction to initialize a conversation using the preset"
+                },
+                "parameters": {
+                    "type": "object",
+                    "description": "The parameters of model(s)"
+                },
+                "context_window_policy": {
+                    "type": "string",
+                    "enum": [
+                        "none",
+                        "rolling",
+                        "stop",
+                        "last"
+                    ]
+                },
+                "keep_system": {
+                    "type": "boolean",
+                    "description": "Keep system prompt"
+                }
+            }
+        },
+        "url": {
+            "anyOf": [
+                {
+                    "type": "string",
+                    "format": "uri"
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "url": {
+                            "type": "string",
+                            "format": "uri"
+                        },
+                        "name": {
+                            "type": "string"
+                        }
+                    }
+                }
+            ]
+        },
+        "person_or_org": {
+            "anyOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "name": {
+                            "type": "string"
+                        },
+                        "email": {
+                            "type": "string",
+                            "format": "email"
+                        },
+                        "url": {
+                            "type": "string",
+                            "format": "uri"
+                        }
+                    }
+                }
+            ]
+        },
+        "avatar": {
+            "anyOf": [
+                {
+                    "type": "string",
+                    "format": "uri"
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "name": {
+                            "type": "string"
+                        },
+                        "color": {
+                            "type": "string"
+                        },
+                        "url": {
+                            "type": "string",
+                            "format": "uri"
+                        }
+                    }
+                }
+            ]
+        },
+        "license": {
+            "$id": "#/definitions/license",
+            "anyOf": [
+                {
+                    "type": "string",
+                    "enum": [
+                        "MIT",
+                        "Apache-2.0",
+                        "GPL-3.0",
+                        "BSD-3-Clause",
+                        "BSD-2-Clause",
+                        "LGPL-3.0",
+                        "LGPL-2.1",
+                        "MPL-2.0",
+                        "CDDL-1.0",
+                        "EPL-2.0",
+                        "AGPL-3.0",
+                        "Unlicense",
+                        "Other"
+                    ]
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "name": {
+                            "type": "string"
+                        },
+                        "url": {
+                            "type": "string",
+                            "format": "uri"
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}
