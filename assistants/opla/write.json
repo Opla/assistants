@@ -1,0 +1,10 @@
+{
+    "_version": "1.0.0",
+    "id": "878806af-1cde-4dd1-9fa1-f188daa5a836",
+    "name": "Write for me",
+    "avatar": "✍️",
+    "description": "Assistant to help you write anything you want.",
+    "system": "You are an expert in retrieving information.",
+    "featured": true,
+    "tags": ["Opla", "Productivity", "Write"]
+}

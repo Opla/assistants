@@ -1,0 +1,10 @@
+{
+    "_version": "1.0.0",
+    "id": "e71584a7-ecc0-4735-a02a-85c81f80135f",
+    "name": "Opla",
+    "avatar": { "url": "https://opla.github.io/opla/assets/opla.png" },
+    "description": "",
+    "system": "You are an expert in retrieving information.",
+    "featured": true,
+    "tags": ["Opla", "Productivity"]
+}
