@@ -3,7 +3,7 @@
     "id": "69b13dcb-ef85-423b-9518-192cabc9ff2a",
     "name": "Simple Gpt",
     "avatar": "🦙",
-    "author": "Opla",
+    "author": { "name": "Opla", "url": "https://opla.ai" },
     "description": "Simple assistant.",
     "system": "You are an expert in retrieving information.",
     "featured": true,

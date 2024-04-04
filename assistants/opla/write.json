@@ -3,7 +3,7 @@
     "id": "878806af-1cde-4dd1-9fa1-f188daa5a836",
     "name": "Write for me",
     "avatar": "✍️",
-    "author": "Opla",
+    "author": { "name": "Opla", "url": "https://opla.ai" },
     "description": "Assistant to help you write anything you want.",
     "system": "You are an expert in retrieving information.",
     "featured": true,
