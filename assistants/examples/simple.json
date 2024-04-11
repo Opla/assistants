@@ -7,5 +7,18 @@
     "description": "Simple assistant.",
     "system": "You are an expert in retrieving information.",
     "featured": true,
-    "tags": ["Opla", "Productivity", "Example"]
+    "tags": ["Opla", "Productivity", "Example"],
+    "targets": [
+        {
+            "name": "Opla",
+            "provider": "Opla",
+            "parameters": {
+                "streams": true,
+                "seed": -1,
+                "stop": "[]",
+                "temperature": 0.8,
+                "grammar": null
+            }
+        }
+    ]
 }
