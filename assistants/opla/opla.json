@@ -7,5 +7,49 @@
     "description": "Opla is a personal assistant that helps you to be more productive and efficient.",
     "system": "You are an expert in retrieving information.",
     "featured": true,
-    "tags": ["Opla", "Productivity"]
+    "tags": ["Opla", "Productivity"],
+    "prompt_templates": [
+        {
+            "id": "d290f1ee-6c54-4b01-90e6-d701748f0851",
+            "name": "Blog post",
+            "description": "Write me a 500-word blog post.",
+            "title": "Blog post",
+            "value": "Write me a 500-word blog post about tips on creating a social media content calendar for e-commerce. Make it professional."
+        },
+        {
+            "id": "d290f1ee-6c54-4b01-90e6-d701748f0852",
+            "name": "Case study",
+            "description": "Write a case study for [insert topic].",
+            "title": "Case study",
+            "value": "Write a case study for [insert topic]."
+        },
+        {
+            "id": "d290f1ee-6c54-4b01-90e6-d701748f0853",
+            "name": "Follow back email",
+            "description": "Create a thank you email template.",
+            "title": "Follow back email",
+            "value": "Create a thank you email template I can send after a meeting."
+        },
+        {
+            "id": "d290f1ee-6c54-4b01-90e6-d701748f0854",
+            "name": "Explain complex concept",
+            "description": "Can you explain this concept in simple terms.",
+            "title": "Explain complex concept",
+            "value": "Can you explain this concept in simple terms [insert complex concept]? How would you explain it to a non-technical person?"
+        },
+        {
+            "id": "d290f1ee-6c54-4b01-90e6-d701748f0855",
+            "name": "10 subject lines",
+            "description": "Write 10 subject lines for emails about [insert topic].",
+            "title": "10 subject lines",
+            "value": "Write 10 subject lines for emails about [insert topic]."
+        },
+        {
+            "id": "d290f1ee-6c54-4b01-90e6-d701748f0856",
+            "name": "Write a strategy",
+            "description": "Write a strategy for how I can stay motivated at work and maintain focus.",
+            "title": "Write a strategy",
+            "value": "Write a strategy for how I can stay motivated at work and maintain focus."
+        }
+    ]
 }

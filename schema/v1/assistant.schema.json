@@ -143,6 +143,12 @@
                     "items": {
                         "$ref": "#/definitions/preset"
                     }
+                },
+                "prompt_templates": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/promptTemplate"
+                    }
                 }
             },
             "required": [
@@ -215,6 +221,41 @@
                 "keep_system": {
                     "type": "boolean",
                     "description": "Keep system prompt"
+                }
+            }
+        },
+        "promptTemplate": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "uuid",
+                    "description": "prompt's unique identifier"
+                },
+                "created_at": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "creation date of the prompt"
+                },
+                "updated_at": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "updated date of the prompt"
+                },
+                "title": {
+                    "type": "string",
+                    "description": "The title of the prompt"
+                },
+                "icon": {
+                    "type": "string",
+                    "description": "The icon of the prompt"
+                },
+                "value": {
+                    "type": "string",
+                    "description": "The prompt"
+                },
+                "tags": {
+                    "$ref": "#/definitions/tags"
                 }
             }
         },

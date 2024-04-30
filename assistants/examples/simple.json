@@ -20,5 +20,28 @@
                 "grammar": null
             }
         }
+    ],
+    "prompt_templates": [
+        {
+            "id": "d290f1ee-6c54-4b01-90e6-d701748f0851",
+            "name": "Hello",
+            "description": "Hello",
+            "title": "Hello",
+            "value": "Hello"
+        },
+        {
+            "id": "d290f1ee-6c54-4b01-90e6-d701748f0852",
+            "name": "What is a LLama?",
+            "description": "What is a LLama?",
+            "title": "What is a LLama?",
+            "value": "What is a LLama?"
+        },
+        {
+            "id": "d290f1ee-6c54-4b01-90e6-d701748f0853",
+            "name": "Test",
+            "description": "Test",
+            "title": "Test",
+            "value": "Test"
+        }
     ]
 }
